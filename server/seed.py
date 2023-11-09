@@ -1,6 +1,6 @@
 from app import app, db
 from models import GasStation
-
+from faker import Faker 
 # Sample list of gas stations
 stations_data = [
     {
