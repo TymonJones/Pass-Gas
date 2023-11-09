@@ -1,6 +1,6 @@
 import React from 'react';
 import StationList from './components/StationList';
-import './App.css'; // Assuming you have some CSS for styling
+import './App.css'; // Add some CSS for styling
 
 function App() {
   return (
