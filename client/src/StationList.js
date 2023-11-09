@@ -24,14 +24,20 @@ const StationList = () => {
       });
   }, []);
 
-  if (isLoading) return <div>Loading...</div>;
-  if (error) return <div>Error: {error.message}</div>;
+  if (isLoading) return <div className="text-center mt-4 text-xl">Loading...</div>;
+  if (error) return <div className="text-center text-red-500 mt-4 text-xl">Error: {error.message}</div>;
 
   return (
-    <section>
-      {stations.map(station => (
-        <Station key={station.id} {...station} />
-      ))}
+    <section className="container mx-auto p-4">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        {stations.length > 0 ? (
+          stations.map(station => (
+            <Station key={station.id} {...station} />
+          ))
+        ) : (
+          <p className="text-center col-span-full">No stations available.</p>
+        )}
+      </div>
     </section>
   );
 };
