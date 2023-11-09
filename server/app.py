@@ -7,6 +7,8 @@ app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///pass_gas.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db.init_app(app)
+migrate = Migrate(app, db)
+
 
 # Create the database tables
 with app.app_context():

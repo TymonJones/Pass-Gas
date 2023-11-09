@@ -1,20 +1,31 @@
-from app import app
-from models import db, GasStation
+from app import app, db
+from models import GasStation
 
-def seed():
-    # Delete existing data
+# Predefined list of gas stations
+stations_data = [
+    # ... your predefined stations
+]
+
+def seed_database():
+    # Clear existing data
     db.drop_all()
     db.create_all()
-
-    # Add seed data
-    station1 = GasStation(name="Gas Station 1", address="123 LA Street", latitude=34.0522, longitude=-118.2437, gas_price=4.99)
-    station2 = GasStation(name="Gas Station 2", address="456 LA Avenue", latitude=34.0522, longitude=-118.2437, gas_price=5.09)
-
-    db.session.add(station1)
-    db.session.add(station2)
-
+    
+    # Create new entries
+    for station_data in stations_data:
+        station = GasStation(
+            name=station_data["name"],
+            address=station_data["address"],
+            latitude=station_data["latitude"],
+            longitude=station_data["longitude"],
+            gas_price=station_data["gas_price"]
+        )
+        db.session.add(station)
+    
+    # Commit changes
     db.session.commit()
 
-if __name__ == '__main__':
-    with app.app_context():
-        seed()
+if __name__ == "__main__":
+    with app.app_context():  # Push an application context for the database interactions
+        seed_database()
+
