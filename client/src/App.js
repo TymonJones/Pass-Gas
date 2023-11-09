@@ -1,6 +1,8 @@
 import React from 'react';
-import StationList from './components/StationList';
-import './App.css'; // Add some CSS for styling
+import StationList from './StationList';
+import Styling from './index.css'; // Add some CSS for styling
+import Station from './Station.js'
+
 
 function App() {
   return (
