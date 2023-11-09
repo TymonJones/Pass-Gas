@@ -1,9 +1,23 @@
 from app import app, db
 from models import GasStation
 
-# Predefined list of gas stations
+# Sample list of gas stations
 stations_data = [
-    # ... your predefined stations
+    {
+        "name": "Quality Fuels",
+        "address": "1234 Sunset Blvd, Los Angeles, CA",
+        "latitude": 34.052235,
+        "longitude": -118.243683,
+        "gas_price": 3.89
+    },
+    {
+        "name": "Eco Petro",
+        "address": "5678 Hollywood Blvd, Los Angeles, CA",
+        "latitude": 34.101235,
+        "longitude": -118.326683,
+        "gas_price": 4.09
+    },
+    
 ]
 
 def seed_database():
