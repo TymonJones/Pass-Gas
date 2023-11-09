@@ -9,6 +9,7 @@ migrate = "*"
 flask-sqlalchemy = "*"
 flask-migrate = "*"
 flask-restful = "*"
+faker = "*"
 
 [dev-packages]
 
